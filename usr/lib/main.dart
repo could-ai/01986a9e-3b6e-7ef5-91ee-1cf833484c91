@@ -157,9 +157,8 @@ class _ChatScreenState extends State<ChatScreen> {
         mainAxisAlignment:
             message.isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
-          if (!message.isMe) ...
-            _buildAvatar(false),
-          const SizedBox(width: 8),
+          if (!message.isMe) _buildAvatar(false),
+          if (!message.isMe) const SizedBox(width: 8),
           Flexible(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
@@ -195,9 +194,8 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
           ),
-          const SizedBox(width: 8),
-          if (message.isMe) ...
-            _buildAvatar(true),
+          if (message.isMe) const SizedBox(width: 8),
+          if (message.isMe) _buildAvatar(true),
         ],
       ),
     );
